@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow Beauty - Maquillaje Profesional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Segoe+UI&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #fff0f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff69b4;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8em;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin-top: 15px;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav a:hover {
+      color: #fffacd;
+    }
+
+    .hero {
+      background: url('https://i.ibb.co/d0nM7m2h/10.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .productos, .ofertas, .contacto {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .productos h2, .ofertas h2, .contacto h2 {
+      color: #ff1493;
+      margin-bottom: 30px;
+    }
+
+    .grid-productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .producto {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 230px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .producto h3 {
+      margin: 10px 0 5px;
+      color: #cc0066;
+    }
+
+    .producto p {
+      font-size: 0.95em;
+      margin-bottom: 5px;
+    }
+
+    .producto span {
+      display: block;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .producto button {
+      background-color: #ff1493;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .producto button:hover {
+      background-color: #ff69b4;
+    }
+
+    .ofertas img {
+      width: 300px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form button {
+      background-color: #ff1493;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Glow Beauty</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio"><i data-lucide="home"></i> Inicio</a></li>
+        <li><a href="#productos"><i data-lucide="shopping-bag"></i> Productos</a></li>
+        <li><a href="#ofertas"><i data-lucide="percent"></i> Ofertas</a></li>
+        <li><a href="#contacto"><i data-lucide="mail"></i> Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h2>Brilla como nunca antes</h2>
+    <p>Explora nuestra línea de maquillaje profesional, de calidad y a precios increíbles.</p>
+  </section>
+
+  <section id="productos" class="productos">
+    <h2>Productos de Maquillaje</h2>
+    <div class="grid-productos">
+      <div class="producto">
+        <img src="https://i.ibb.co/LhvPG473/8.jpg" alt="Paleta de Sombras" />
+        <h3>Paleta de Sombras</h3>
+        <p>Colores vibrantes y duraderos.</p>
+        <span>$24.99</span>
+        <button onclick="agregarCarrito('Paleta de Sombras')">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://i.ibb.co/dJQdstMY/base.webp" alt="Base Líquida" />
+        <h3>Base Líquida</h3>
+        <p>Cobertura total y acabado mate.</p>
+        <span>$40</span>
+        <button onclick="agregarCarrito('Base Líquida')">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://i.ibb.co/s9CbBhJx/2.jpg" alt="Labial Mate" />
+        <h3>Labial Mate</h3>
+        <p>Larga duración y acabado aterciopelado.</p>
+        <span>$15</span>
+        <button onclick="agregarCarrito('Labial Mate')">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://i.ibb.co/fGHK7bpz/3.jpg" alt="Rímel Volumen" />
+        <h3>Rímel Volumen</h3>
+        <p>Pestañas con volumen extremo.</p>
+        <span>$20</span>
+        <button onclick="agregarCarrito('Rímel Volumen')">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://i.ibb.co/8H7srWd/4.jpg" alt="Iluminador Glow" />
+        <h3>Iluminador Glow</h3>
+        <p>Resalta tus facciones con un toque de luz.</p>
+        <span>$35</span>
+        <button onclick="agregarCarrito('Iluminador Glow')">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://i.ibb.co/ZRSfVSGJ/5.jpg" alt="Delineador Líquido" />
+        <h3>Delineador Líquido</h3>
+        <p>Precisión y pigmentación intensa.</p>
+        <span>$7.99</span>
+        <button onclick="agregarCarrito('Delineador Líquido')">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://i.ibb.co/QF7fywrm/6.jpg" alt="Corrector de Ojeras" />
+        <h3>Corrector de Ojeras</h3>
+        <p>Cubre imperfecciones al instante.</p>
+        <span>$30</span>
+        <button onclick="agregarCarrito('Corrector de Ojeras')">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://i.ibb.co/mC7yYvNf/7.jpg" alt="Polvo Compacto" />
+        <h3>Polvo Compacto</h3>
+        <p>Acabado sedoso para todo el día.</p>
+        <span>$18</span>
+        <button onclick="agregarCarrito('Polvo Compacto')">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img <img src="https://i.ibb.co/VphNJKVn/13.jpg" alt="13" border="0"></a>" 
+        <h3>Kit Glow Beauty</h3>
+        <p>Incluye sombras, labial y más.</p>
+        <span>$59.99</span>
+        <button onclick="agregarCarrito('Kit Glow Beauty')">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="ofertas" class="ofertas">
+    <h2>Ofertas Especiales</h2>
+    <p>Descuentos por tiempo limitado en combos de maquillaje.</p>
+    <img <img src="https://i.ibb.co/whkms7cc/14.jpg" alt="14" border="0"></a>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
+    <form id="formContacto">
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu correo" required />
+      <textarea placeholder="Tu mensaje" required></textarea>
+      <button type="submit"><i data-lucide="send"></i> Enviar</button>
+    </form>
+  </section>
+
+  <script>
+    lucide.createIcons();
+
+    function agregarCarrito(nombreProducto) {
+      alert(`Has agregado "${nombreProducto}" al carrito.`);
+    }
+
+    document.getElementById("formContacto").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("\u00a1Gracias por tu mensaje! Te contactaremos pronto.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
